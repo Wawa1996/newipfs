@@ -78,7 +78,7 @@ public class Libp2pNetwork implements P2PNetwork<Peer> {
                         new InetSocketAddress("192.168.3.5", listenPort),nodeId);
         System.out.println("nodeid = "+nodeId);
         host = BuilderJKt.hostJ(Builder.Defaults.None,
-                b->{ 
+                b->{
                     b.getIdentity().setFactory(()-> privKeyBytes);
                     b.getTransports().add(TcpTransport::new);
                     b.getSecureChannels().add(NoiseXXSecureChannel::new);
